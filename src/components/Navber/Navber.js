@@ -9,7 +9,7 @@ const Navber = () => {
         <div>
           <Navbar>
       <Container>
-      <Link to="/" class="btn btn-ghost  text-2xl uppercase">Student Managment</Link>
+      <Link to="/" class="btn btn-ghost">Student Managment</Link>
         
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">

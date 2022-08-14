@@ -1,29 +1,17 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 const Teacher = () => {
     return (
-        <div>
-     <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <div className='container student-form'>
+            <h2 className='text-center mb-3'>Teacher Login Form</h2>
+            <form className='text-center'>
+         <label className='ms-4'>Email: </label>
+         <input className=' ms-2 mt-2' placeholder='your email' type='email'/><br/>
+         <label>Password: </label>
+         <input className='ms-2 mt-2' placeholder='your password' type='password'/><br/>
+         <h5> You have No account? <Link to="/register">Create New Account</Link> </h5>
+         <button className=' btn btn-primary mt-2'>Login</button><br/>
+      </form>
         </div>
     );
 };
