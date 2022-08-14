@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -30,15 +30,65 @@ if(error || uError ||pError){
 }
 
 const onSubmit = async data =>{
-console.log(data);
+
+const userEmail = data.email;
+const name = data.name;
+const passion = 'student';
+const studentInfo = {
+  userEmail:userEmail,
+  name:name,
+  passion:passion
+
+}
+if(data.passion.toLowerCase() ==='student'){
+  fetch(`http://localhost:5000/student`, {
+        method: 'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body:JSON.stringify(studentInfo)
+    })
+    .then(res =>res.json())
+    .then(data =>{
+        console.log(data)
+        
+    })
+    
+}
+
+
+const userEmail2 = data.email;
+const name2 = data.name;
+const passion2 = 'teacher';
+const teacherInfo = {
+  userEmail:userEmail2,
+  name:name2,
+  passion:passion2
+
+}
+if(data.passion.toLowerCase() ==='teacher'){
+  fetch(`http://localhost:5000/teacher`, {
+        method: 'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body:JSON.stringify(teacherInfo)
+    })
+    .then(res =>res.json())
+    .then(data =>{
+        console.log(data)
+        
+    })
+    
+}
+
+
 await createUserWithEmailAndPassword(data.email, data.password);
 await updateProfile({ displayName: data.name});
 await passion({ displayName: data.name});
 
 };
-    
-    
-    
+  
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className="card w-96 bg-base-100 shadow-xl">
