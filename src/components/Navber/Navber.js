@@ -3,8 +3,17 @@ import { Container } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import '../Navber/Navber.css'
 import { Link, NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navber = () => {
+
+  const [user] = useAuthState(auth);
+
+  const logOut = () =>{
+    signOut(auth);
+  }
     return (
         <div>
           <Navbar>
@@ -14,7 +23,11 @@ const Navber = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-      <NavLink to ='/student'>Student Sing in</NavLink>
+
+    {user?<button onClick={logOut}>Logout</button> : <NavLink to ='/student'> Student Login</NavLink>}
+     
+      {/* <NavLink to ='/student'>Student Sing in</NavLink> */}
+
       <NavLink to ='/teacher'>Teacher Sing in</NavLink>
        
           </Navbar.Text>
