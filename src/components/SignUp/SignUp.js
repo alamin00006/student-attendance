@@ -90,12 +90,12 @@ await passion({ displayName: data.name});
 };
   
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div>
+            <div className="">
   <div className="card-body">
     <h2 className="text-center text-3xl font-bold">Sign Up</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className='text-center my-form' onSubmit={handleSubmit(onSubmit)}>
 
     <div className="form-control w-full max-w-xs">
   <label className="label">
@@ -192,10 +192,10 @@ await passion({ displayName: data.name});
   </label>
 </div>
       {singInError}
-      <input className='btn text-center w-full max-w-xs' type="submit"  value='Sign Up'/>
+      <input className='btn btn-primary text-center' type="submit"  value='Sign Up'/>
     </form>
-    <p>Already have a Account? <Link className='text-primary' to="/student"><small>Please Login Student Or </small></Link></p>
-    <p>Already have a Account? <Link className='text-primary' to="/teacher"><small>Please Login Teacher</small></Link></p>
+    <p className='text-center'>Already have a Account? <Link className='text-primary' to="/login"><small>Please Login</small></Link></p>
+    
     
   </div>
 </div>

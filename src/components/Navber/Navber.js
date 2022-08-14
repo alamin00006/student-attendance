@@ -24,12 +24,14 @@ const Navber = () => {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
 
-    {user?<button onClick={logOut}>Logout</button> : <NavLink to ='/login'> Student Login</NavLink>}
+    {user?<button onClick={logOut}>Logout</button> : <NavLink to ='/login'>Login</NavLink>}
      
       {/* <NavLink to ='/student'>Student Sing in</NavLink> */}
 
       <NavLink to ='/teacher'>Teacher</NavLink>
       <NavLink to ='/student'>Students</NavLink>
+      <NavLink to ='/prStudent'>Present Students</NavLink>
+      <NavLink to ='/absent'>Absent Students</NavLink>
       
        
           </Navbar.Text>
