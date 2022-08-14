@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navber from './components/Navber/Navber';
 import Student from './components/Student/Student';
 import Teacher from './components/Teacher/Teacher';
-import Register from './components/Register/Register';
+import SignUp from './components/SignUp/SignUp';
 function App() {
   return (
     <div className='container'>
@@ -13,7 +13,7 @@ function App() {
 
        <Route  path='/student' element={<Student></Student>}></Route>
        <Route  path='/teacher' element={<Teacher></Teacher>}></Route>
-       <Route  path='/register' element={<Register></Register>}></Route>
+       <Route  path='/register' element={<SignUp></SignUp>}></Route>
        </Routes>
       
     </div>
