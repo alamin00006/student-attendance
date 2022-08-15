@@ -6,7 +6,7 @@ const GetTeacher = () => {
     const [teachers, setTeacher] = useState([])
 
     useEffect(() =>{
-     const url = "http://localhost:5000/teacher";
+     const url = "http://localhost:5000/teacher"
      fetch(url)
      .then(res =>res.json())
      .then(data => setTeacher(data));
